@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@layer components {
+  .text-gradient {
+    background: linear-gradient(to right, hsl(var(--primary)), hsl(var(--accent)));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .bg-hero-gradient {
+    background: linear-gradient(to bottom, hsl(var(--navy)), hsl(var(--navy-light)));
+  }
+
+  .bg-section-dark {
+    background: linear-gradient(to bottom, hsl(var(--navy-light)), hsl(var(--navy)));
+  }
+
+  .glow-primary {
+    box-shadow: 0 0 20px rgba(59, 130, 246, 0.2);
+  }
+
+  .glow-accent {
+    box-shadow: 0 0 20px rgba(245, 158, 11, 0.2);
+  }
+}
