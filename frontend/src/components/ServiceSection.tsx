@@ -65,7 +65,7 @@ const ServicesSection = () => {
             End-to-End Capabilities
           </span>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mt-4 max-w-3xl mx-auto">
-            Our <span className="text-primary">Solutions</span> & Services
+            <span className="text-[#63c1b3]">Our Solutions</span> & Services
           </h2>
           <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
             Comprehensive tools and expertise to power every aspect of your media operations.
@@ -73,21 +73,39 @@ const ServicesSection = () => {
         </motion.div>
 
         {/* Services Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {services.map((service, index) => (
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-3 gap-6"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: {
+                staggerChildren: 0.15
+              }
+            }
+          }}
+        >
+          {services.map((service) => (
             <motion.div
               key={service.title}
               className={`group bg-white/5 p-8 rounded-2xl border border-white/10 hover:border-primary/50 transition-all duration-300 hover:bg-white/[0.07] ${service.className}`}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.1 }}
+              variants={{
+                hidden: { opacity: 0, y: 30 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: { duration: 0.6 }
+                }
+              }}
             >
               <div className="flex items-center gap-4 mb-6">
-                <div className="bg-primary/20 p-4 rounded-xl group-hover:scale-110 transition-transform duration-300">
-                  <service.icon className="w-8 h-8 text-primary" />
+                <div className="bg-[#63c1b3]/20 p-4 rounded-xl group-hover:scale-110 transition-transform duration-300">
+                  <service.icon className="w-8 h-8 text-[#63c1b3]" />
                 </div>
-                <h3 className="text-2xl font-bold text-white">
+                <h3 className="text-2xl font-bold text-[#63c1b3]">
                   {service.title}
                 </h3>
               </div>
@@ -106,7 +124,7 @@ const ServicesSection = () => {
               </ul>
             </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

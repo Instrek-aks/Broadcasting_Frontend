@@ -1,12 +1,10 @@
-import { Activity, ArrowRight } from "lucide-react";
-import { Input } from "../components/ui/input";
-import { Button } from "../components/ui/button";
+import { Activity, MapPin, Phone, Mail, Globe } from "lucide-react";
 
 const Footer = () => {
   const companyLinks = [
-    "Our Team",
-    "Why choose us",
-    "Contact us",
+    "Who We Are",
+    "Why Partner With Us",
+    "Contact",
     "Privacy Policy",
   ];
 
@@ -27,7 +25,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-black py-16 relative overflow-hidden border-t border-white/10">
+    <footer className="bg-black py-8 relative overflow-hidden border-t border-white/10">
       {/* Decorative background elements */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-0 right-0 w-96 h-96 bg-primary/20 rounded-full blur-3xl"></div>
@@ -35,51 +33,53 @@ const Footer = () => {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="grid md:grid-cols-4 gap-12 mb-12">
+        <div className="grid md:grid-cols-4 gap-8 mb-8">
           {/* Logo & Contact Form Column */}
           <div>
             <div className="flex items-center gap-3 mb-6">
-              <div className="bg-primary/20 p-2 rounded-lg border border-primary/30">
-                <Activity className="w-6 h-6 text-primary" />
+              <div className="bg-[#63c1b3]/20 p-2 rounded-lg border border-[#63c1b3]/30">
+                <Activity className="w-6 h-6 text-[#63c1b3]" />
               </div>
               <div className="flex flex-col text-left">
-                <span className="text-xl font-bold tracking-tight text-white uppercase leading-none">
+                <span className="text-xl font-bold tracking-tight text-[#63c1b3] uppercase leading-none">
                   Broadcast
                 </span>
-                <span className="text-xs font-medium tracking-[0.2em] text-primary uppercase leading-none mt-1">
+                <span className="text-xs font-medium tracking-[0.2em] text-[#63c1b3] uppercase leading-none mt-1">
                   Digitally
                 </span>
               </div>
             </div>
-
-            <h3 className="text-lg font-bold text-primary mb-4">Get in Touch</h3>
-            <p className="text-white/70 text-sm mb-4">
-              Reach out to us - let's talk possibilities.
+            <p className="text-white/60 text-xs mb-6 uppercase tracking-wider">
+              Where Heritage Engineering Meets Digital Innovation
             </p>
 
-            <div className="relative mb-4">
-              <Input
-                type="email"
-                placeholder="Enter your email"
-                className="pr-12 bg-white border-0 text-gray-900 placeholder:text-gray-500 rounded-full"
-              />
-              <Button
-                size="icon"
-                className="absolute right-1 top-1/2 -translate-y-1/2 bg-gray-900 hover:bg-gray-800 text-white rounded-full h-8 w-8"
-              >
-                <ArrowRight className="w-4 h-4" />
-              </Button>
-            </div>
+            <h3 className="text-lg font-bold text-primary mb-4">Stay Connected</h3>
+            <p className="text-white/70 text-sm mb-4">
+              Your Partner in the New Era of Media.
+            </p>
 
-            <div className="flex items-center gap-2">
-              <input
-                type="checkbox"
-                id="contact-terms"
-                className="rounded border-white/30 bg-white/10"
-              />
-              <label htmlFor="contact-terms" className="text-white/70 text-xs">
-                I agree to be contacted via email
-              </label>
+            <div className="space-y-4 mb-6 text-sm">
+              <div className="flex items-start gap-3">
+                <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" />
+                <p className="text-white/70">
+                  123 Media Tech Park,<br />Innovation District, NY 10001
+                </p>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <Phone className="w-5 h-5 text-primary shrink-0" />
+                <p className="text-white/70">+1 (555) 123-4567</p>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <Mail className="w-5 h-5 text-primary shrink-0" />
+                <p className="text-white/70">contact@broadcastdigitally.com</p>
+              </div>
+
+              <div className="flex items-center gap-3">
+                <Globe className="w-5 h-5 text-primary shrink-0" />
+                <p className="text-white/70">www.broadcastdigitally.com</p>
+              </div>
             </div>
           </div>
 
@@ -136,11 +136,17 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-white/10 pt-8">
+        <div className="border-t border-white/10 pt-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-            <p className="text-white/60">
-              © Broadcast Technologies
-            </p>
+            <div className="flex flex-col md:flex-row gap-4 items-center">
+              <p className="text-white/60">
+                © Broadcast Digitally
+              </p>
+              <span className="hidden md:inline text-white/20">|</span>
+              <p className="text-primary/60">
+                www.broadcastdigitally.com
+              </p>
+            </div>
 
             <p className="text-white/50">
               All Rights Reserved {new Date().getFullYear()}

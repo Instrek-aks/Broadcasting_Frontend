@@ -6,7 +6,7 @@ const HeroSection = () => {
   return (
     <section
       id="hero"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0a0a0a]"
+      className="relative min-h-[85vh] md:min-h-screen flex items-center justify-center overflow-hidden bg-[#0a0a0a]"
     >
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
@@ -19,7 +19,7 @@ const HeroSection = () => {
       </div>
 
       {/* Content */}
-      <div className="container mx-auto px-4 relative z-20 pt-20 pb-24 lg:pb-0">
+      <div className="container mx-auto px-4 relative z-20 pt-24 md:pt-32 pb-12 md:pb-24 lg:pb-0">
         <div className="max-w-4xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -27,7 +27,7 @@ const HeroSection = () => {
             transition={{ duration: 0.8 }}
           >
             {/* Tagline Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-sm mb-8">
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-sm mb-6 md:mb-8">
               <Activity className="w-4 h-4 text-primary" />
               <span className="text-sm font-medium text-primary uppercase tracking-wider">
                 Where Heritage Engineering Meets Digital Innovation
@@ -35,13 +35,13 @@ const HeroSection = () => {
             </div>
 
             {/* Main Title */}
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white tracking-tight leading-tight mb-0">
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white tracking-tight leading-none mb-0">
               BROADCAST
-              <span className="text-primary block mt-1">DIGITALLY</span>
+              <span className="text-[#63c1b3] block">DIGITALLY</span>
             </h1>
 
             {/* Subtitle */}
-            <p className="text-xl md:text-2xl text-gray-300 font-light mb-10 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-xl md:text-2xl text-gray-300 font-light mb-8 md:mb-10 max-w-2xl mx-auto leading-relaxed">
               Engineering the Next Wave of Media.
             </p>
 
@@ -49,7 +49,7 @@ const HeroSection = () => {
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button
                 size="lg"
-                className="bg-primary hover:bg-primary/90 text-white px-8 py-6 text-lg rounded-full min-w-[200px]"
+                className="bg-primary hover:bg-primary/90 text-white px-8 py-4 md:py-6 text-lg rounded-full min-w-[200px]"
               >
                 Explore Solutions
                 <ArrowRight className="ml-2 w-5 h-5" />
@@ -57,7 +57,7 @@ const HeroSection = () => {
               <Button
                 variant="outline"
                 size="lg"
-                className="border-white/20 text-black bg-white hover:bg-white/90 px-8 py-6 text-lg rounded-full min-w-[200px]"
+                className="border-white/20 text-black bg-white hover:bg-white/90 px-8 py-4 md:py-6 text-lg rounded-full min-w-[200px]"
               >
                 Contact Us
               </Button>
@@ -66,11 +66,21 @@ const HeroSection = () => {
         </div>
 
         {/* Feature Highlights (Optional but good for visuals) */}
+        {/* Feature Highlights (Optional but good for visuals) */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 max-w-5xl mx-auto"
-          initial={{ opacity: 0, y: 50 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
+          className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-6 mt-8 max-w-5xl mx-auto"
+          initial="hidden"
+          animate="visible"
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: {
+                staggerChildren: 0.2,
+                delayChildren: 0.4
+              }
+            }
+          }}
         >
           {[
             {
@@ -89,8 +99,12 @@ const HeroSection = () => {
               desc: "Future-proof infrastructure",
             },
           ].map((item, index) => (
-            <div
+            <motion.div
               key={index}
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+              }}
               className="bg-white/5 backdrop-blur-sm border border-white/10 p-6 rounded-xl hover:bg-white/10 transition-colors cursor-default"
             >
               <div className="flex items-center gap-3 mb-3">
@@ -98,7 +112,7 @@ const HeroSection = () => {
                 <h3 className="text-lg font-semibold text-white">{item.label}</h3>
               </div>
               <p className="text-white/60 text-sm">{item.desc}</p>
-            </div>
+            </motion.div>
           ))}
         </motion.div>
       </div>

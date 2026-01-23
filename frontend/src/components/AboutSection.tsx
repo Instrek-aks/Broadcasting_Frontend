@@ -22,7 +22,8 @@ const AboutSection = () => {
               <img
                 src="/engineer.png"
                 alt="Broadcast Engineer"
-                className="w-full h-auto object-cover"
+                loading="lazy"
+                className="w-full h-full object-cover"
               />
             </div>
             {/* Decorative Element */}
@@ -32,27 +33,49 @@ const AboutSection = () => {
 
           {/* Right Content - Text */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial="hidden"
+            whileInView="visible"
             viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
+            variants={{
+              hidden: { opacity: 0, x: 50 },
+              visible: {
+                opacity: 1,
+                x: 0,
+                transition: {
+                  duration: 0.8,
+                  staggerChildren: 0.2
+                }
+              }
+            }}
           >
             {/* Section Header */}
-            <div className="mb-8">
+            <motion.div
+              className="mb-8"
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+              }}
+            >
               <span className="text-primary font-semibold uppercase tracking-wider text-sm">
                 Who We Are & Our Philosophy
               </span>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mt-4 mb-6 leading-tight">
-                The Modern Standard in <span className="text-primary">Media Integration</span>
+                <span className="text-[#63c1b3]">The Modern Standard</span> in Media Integration
               </h2>
               <p className="text-gray-400 text-lg leading-relaxed">
                 At Broadcast Digitally, we don't just build stations; we build legacies. As the media landscape shifts from traditional hardware to software-defined environments, we provide the technical bridge for broadcasters to cross over without losing signal integrity.
               </p>
-            </div>
+            </motion.div>
 
             {/* Core Values */}
-            <div className="space-y-6 mb-10">
-              <h3 className="text-xl font-bold text-white mb-4 border-l-4 border-primary pl-4">
+            <motion.div
+              className="space-y-6 mb-10"
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+              }}
+            >
+              <h3 className="text-xl font-bold text-[#63c1b3] mb-4 border-l-4 border-[#63c1b3] pl-4">
                 Our Core Values
               </h3>
               <div className="grid gap-4">
@@ -81,14 +104,20 @@ const AboutSection = () => {
                   </div>
                 ))}
               </div>
-            </div>
+            </motion.div>
 
             {/* Mission & Vision */}
-            <div className="grid md:grid-cols-2 gap-6">
+            <motion.div
+              className="grid md:grid-cols-2 gap-6"
+              variants={{
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+              }}
+            >
               <div className="bg-white/5 p-6 rounded-xl border border-white/5 backdrop-blur-sm">
                 <div className="flex items-center gap-3 mb-3">
-                  <Target className="w-8 h-8 text-primary" />
-                  <h4 className="text-white font-bold">Our Mission</h4>
+                  <Target className="w-8 h-8 text-[#63c1b3]" />
+                  <h4 className="text-[#63c1b3] font-bold">Our Mission</h4>
                 </div>
                 <p className="text-gray-400 text-sm">
                   To empower creators and broadcasters by removing technical complexity through world-class systems integration.
@@ -96,14 +125,14 @@ const AboutSection = () => {
               </div>
               <div className="bg-white/5 p-6 rounded-xl border border-white/5 backdrop-blur-sm">
                 <div className="flex items-center gap-3 mb-3">
-                  <Lightbulb className="w-8 h-8 text-primary" />
-                  <h4 className="text-white font-bold">Our Vision</h4>
+                  <Lightbulb className="w-8 h-8 text-[#63c1b3]" />
+                  <h4 className="text-[#63c1b3] font-bold">Our Vision</h4>
                 </div>
                 <p className="text-gray-400 text-sm">
                   To be the global leader in transitioning the broadcast industry into a fully digital, automated, and cloud-capable era.
                 </p>
               </div>
-            </div>
+            </motion.div>
           </motion.div>
         </div>
       </div>

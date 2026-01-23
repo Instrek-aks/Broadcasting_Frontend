@@ -18,7 +18,7 @@ const ContactSection = () => {
                             Why Partner With Us
                         </span>
                         <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mt-4 mb-6">
-                            The Broadcast Digitally <span className="text-primary">Difference</span>
+                            <span className="text-[#63c1b3]">The Broadcast Digitally</span> Difference
                         </h2>
                         <p className="text-gray-400 text-lg leading-relaxed mb-8">
                             What sets us apart from the traditional market is our Vendor-Agnostic Approach. We work with the world's leading OEMs to select the equipment that fits your specific needs and budget—not our bottom line.
@@ -27,7 +27,7 @@ const ContactSection = () => {
                         <div className="grid gap-6">
                             <div className="bg-white/5 p-6 rounded-xl border border-white/10">
                                 <div className="flex items-center gap-4 mb-3">
-                                    <Handshake className="w-8 h-8 text-primary" />
+                                    <Handshake className="w-8 h-8 text-[#63c1b3]" />
                                     <h3 className="text-xl font-bold text-white">Vendor-Agnostic</h3>
                                 </div>
                                 <p className="text-gray-400">Unbiased recommendations tailored to your goals.</p>
@@ -42,8 +42,8 @@ const ContactSection = () => {
                         className="bg-white/5 rounded-2xl p-8 border border-white/10"
                     >
                         <div className="flex items-center gap-4 mb-6">
-                            <Users className="w-8 h-8 text-primary" />
-                            <h3 className="text-2xl font-bold text-white">The Team</h3>
+                            <Users className="w-8 h-8 text-[#63c1b3]" />
+                            <h3 className="text-2xl font-bold text-[#63c1b3]">The Team</h3>
                         </div>
                         <p className="text-gray-400 mb-6 leading-relaxed">
                             Our leadership comprises veterans who have executed pan-regional rollouts for the largest media houses in Asia. With a combined experience of over 50 years in RF, IP, and Satellite engineering, your vision is in safe hands.
@@ -63,9 +63,9 @@ const ContactSection = () => {
                     className="bg-gradient-to-r from-primary/20 to-blue-600/20 rounded-3xl p-12 text-center border border-primary/20 mb-24"
                 >
                     <div className="flex items-center justify-center gap-4 mb-6">
-                        <Zap className="w-12 h-12 text-primary" />
+                        <Zap className="w-12 h-12 text-[#63c1b3]" />
                         <h2 className="text-3xl md:text-5xl font-bold text-white">
-                            Ready to Begin Your Digital Transformation?
+                            Ready to Begin Your <span className="text-[#63c1b3]">Digital Transformation?</span>
                         </h2>
                     </div>
                     <p className="text-gray-300 text-xl max-w-2xl mx-auto mb-8">
@@ -77,48 +77,66 @@ const ContactSection = () => {
                 </motion.div>
 
                 {/* Contact Details */}
-                <div className="grid md:grid-cols-3 gap-8">
+                <motion.div
+                    className="grid md:grid-cols-3 gap-8"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true }}
+                    variants={{
+                        hidden: { opacity: 0 },
+                        visible: {
+                            opacity: 1,
+                            transition: {
+                                staggerChildren: 0.2
+                            }
+                        }
+                    }}
+                >
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        className="bg-white/5 p-6 rounded-xl border border-white/10 hover:border-primary/50 transition-colors"
+                        variants={{
+                            hidden: { opacity: 0, y: 20 },
+                            visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+                        }}
+                        whileHover={{ y: -5 }}
+                        className="bg-white/5 p-6 rounded-xl border border-white/10 hover:border-primary/50 transition-colors cursor-pointer"
                     >
                         <div className="flex items-center gap-3 mb-3">
-                            <MapPin className="w-8 h-8 text-primary" />
-                            <h3 className="text-lg font-bold text-white">Office Address</h3>
+                            <MapPin className="w-8 h-8 text-[#63c1b3]" />
+                            <h3 className="text-lg font-bold text-[#63c1b3]">Office Address</h3>
                         </div>
                         <p className="text-gray-400">123 Media Tech Park,<br />Innovation District, NY 10001</p>
                     </motion.div>
 
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.1 }}
-                        className="bg-white/5 p-6 rounded-xl border border-white/10 hover:border-primary/50 transition-colors"
+                        variants={{
+                            hidden: { opacity: 0, y: 20 },
+                            visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+                        }}
+                        whileHover={{ y: -5 }}
+                        className="bg-white/5 p-6 rounded-xl border border-white/10 hover:border-primary/50 transition-colors cursor-pointer"
                     >
                         <div className="flex items-center gap-3 mb-3">
-                            <Phone className="w-8 h-8 text-primary" />
-                            <h3 className="text-lg font-bold text-white">Direct Line</h3>
+                            <Phone className="w-8 h-8 text-[#63c1b3]" />
+                            <h3 className="text-lg font-bold text-[#63c1b3]">Direct Line</h3>
                         </div>
                         <p className="text-gray-400">+1 (555) 123-4567<br />Mon-Fri, 9am - 6pm EST</p>
                     </motion.div>
 
                     <motion.div
-                        initial={{ opacity: 0, y: 20 }}
-                        whileInView={{ opacity: 1, y: 0 }}
-                        viewport={{ once: true }}
-                        transition={{ delay: 0.2 }}
-                        className="bg-white/5 p-6 rounded-xl border border-white/10 hover:border-primary/50 transition-colors"
+                        variants={{
+                            hidden: { opacity: 0, y: 20 },
+                            visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
+                        }}
+                        whileHover={{ y: -5 }}
+                        className="bg-white/5 p-6 rounded-xl border border-white/10 hover:border-primary/50 transition-colors cursor-pointer"
                     >
                         <div className="flex items-center gap-3 mb-3">
-                            <Mail className="w-8 h-8 text-primary" />
-                            <h3 className="text-lg font-bold text-white">Email</h3>
+                            <Mail className="w-8 h-8 text-[#63c1b3]" />
+                            <h3 className="text-lg font-bold text-[#63c1b3]">Email</h3>
                         </div>
                         <p className="text-gray-400">contact@broadcastdigitally.com<br />support@broadcastdigitally.com</p>
                     </motion.div>
-                </div>
+                </motion.div>
 
             </div>
         </section>

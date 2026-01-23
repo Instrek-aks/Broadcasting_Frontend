@@ -1,21 +1,32 @@
+import { lazy, Suspense } from "react";
 import Header from "../components/Header";
 import HeroSection from "../components/HeroSection";
-import AboutSection from "../components/AboutSection";
-import ServicesSection from "../components/ServiceSection";
-import ContactSection from "../components/ContactSection";
-import Footer from "../components/Footer";
+
+// Lazy load components below the fold for better initial load performance
+const AboutSection = lazy(() => import("../components/AboutSection"));
+const ServicesSection = lazy(() => import("../components/ServiceSection"));
+const ContactSection = lazy(() => import("../components/ContactSection"));
+const Footer = lazy(() => import("../components/Footer"));
 
 const Index = () => {
   return (
     <div className="min-h-screen bg-[#0a0a0a] text-white overflow-x-hidden">
       <Header />
       <main className="overflow-x-hidden">
+        {/* Keep HeroSection eager as it's the LCP element */}
         <HeroSection />
-        <AboutSection />
-        <ServicesSection />
-        <ContactSection />
+
+        {/* Wrap lazy loaded sections in Suspense */}
+        <Suspense fallback={null}>
+          <AboutSection />
+          <ServicesSection />
+          <ContactSection />
+        </Suspense>
       </main>
-      <Footer />
+
+      <Suspense fallback={null}>
+        <Footer />
+      </Suspense>
     </div>
   );
 };
