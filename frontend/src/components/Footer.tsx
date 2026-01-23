@@ -1,225 +1,161 @@
-import { motion } from "framer-motion";
-import {
-  Wifi,
-  MapPin,
-  Mail,
-  Phone,
-  Send,
-  Facebook,
-  Twitter,
-  Instagram,
-  Youtube,
-} from "lucide-react";
+import { Activity, ArrowRight } from "lucide-react";
 import { Input } from "../components/ui/input";
+import { Button } from "../components/ui/button";
 
 const Footer = () => {
-  const services = [
-    "4K & 8K Streaming",
-    "Mbps Youtube 100",
-    "Business Smart Television",
-    "Cyber Security",
-    "Vendor Registration",
-    "Broadband Line",
+  const companyLinks = [
+    "Our Team",
+    "Why choose us",
+    "Contact us",
+    "Privacy Policy",
   ];
 
-  const socialLinks = [
-    { icon: Facebook, href: "#" },
-    { icon: Instagram, href: "#" },
-    { icon: Twitter, href: "#" },
-    { icon: Youtube, href: "#" },
+  const coreServices = [
+    "Radio & Audio Solutions",
+    "Television & Video",
+    "Connectivity & Testing",
+    "Managed Services",
+  ];
+
+  const techServices = [
+    "4K/UHD/HDR Workflow",
+    "IP Workflows (SMPTE 2110)",
+    "Virtual Studios & AR",
+    "Frequency Coordination",
+    "Cloud Integration",
+    "Automation Systems",
   ];
 
   return (
-    <footer
-      id="contact"
-      className="bg-gradient-to-b from-black via-neutral-900 to-black pt-20 pb-8 relative overflow-hidden text-white"
-    >
-      {/* Decorative Tower */}
-      <div className="absolute left-0 bottom-0 opacity-10">
-        <svg
-          width="200"
-          height="400"
-          viewBox="0 0 200 400"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M100 0L120 150H80L100 0Z"
-            fill="currentColor"
-            className="text-blue-500"
-          />
-          <path
-            d="M60 150H140L150 400H50L60 150Z"
-            fill="currentColor"
-            className="text-blue-500"
-          />
-          <circle
-            cx="100"
-            cy="80"
-            r="30"
-            stroke="currentColor"
-            className="text-blue-500"
-            strokeWidth="2"
-            fill="none"
-          />
-          <circle
-            cx="100"
-            cy="80"
-            r="50"
-            stroke="currentColor"
-            className="text-blue-500"
-            strokeWidth="1"
-            fill="none"
-          />
-          <circle
-            cx="100"
-            cy="80"
-            r="70"
-            stroke="currentColor"
-            className="text-blue-500"
-            strokeWidth="0.5"
-            fill="none"
-          />
-        </svg>
+    <footer className="bg-black py-16 relative overflow-hidden border-t border-white/10">
+      {/* Decorative background elements */}
+      <div className="absolute inset-0 opacity-5">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-primary/20 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl"></div>
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="grid md:grid-cols-3 gap-12 mb-16">
-          {/* Newsletter */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-          >
-            <h3 className="text-2xl font-bold text-white mb-6">Newsletter</h3>
+        <div className="grid md:grid-cols-4 gap-12 mb-12">
+          {/* Logo & Contact Form Column */}
+          <div>
+            <div className="flex items-center gap-3 mb-6">
+              <div className="bg-primary/20 p-2 rounded-lg border border-primary/30">
+                <Activity className="w-6 h-6 text-primary" />
+              </div>
+              <div className="flex flex-col text-left">
+                <span className="text-xl font-bold tracking-tight text-white uppercase leading-none">
+                  Broadcast
+                </span>
+                <span className="text-xs font-medium tracking-[0.2em] text-primary uppercase leading-none mt-1">
+                  Digitally
+                </span>
+              </div>
+            </div>
+
+            <h3 className="text-lg font-bold text-primary mb-4">Get in Touch</h3>
+            <p className="text-white/70 text-sm mb-4">
+              Reach out to us - let's talk possibilities.
+            </p>
 
             <div className="relative mb-4">
-              <Send className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-white/50" />
               <Input
                 type="email"
-                placeholder="Enter Email Address"
-                className="pl-12 bg-neutral-900 border-white/10 text-white placeholder:text-white/40 focus:border-blue-500"
+                placeholder="Enter your email"
+                className="pr-12 bg-white border-0 text-gray-900 placeholder:text-gray-500 rounded-full"
               />
+              <Button
+                size="icon"
+                className="absolute right-1 top-1/2 -translate-y-1/2 bg-gray-900 hover:bg-gray-800 text-white rounded-full h-8 w-8"
+              >
+                <ArrowRight className="w-4 h-4" />
+              </Button>
             </div>
 
-            <div className="flex items-center gap-2 mb-6">
+            <div className="flex items-center gap-2">
               <input
                 type="checkbox"
-                id="terms"
-                className="rounded border-white/30 bg-neutral-900"
+                id="contact-terms"
+                className="rounded border-white/30 bg-white/10"
               />
-              <label htmlFor="terms" className="text-white/70 text-sm">
-                I agree all your{" "}
-                <span className="text-orange-400">terms and policies</span>
+              <label htmlFor="contact-terms" className="text-white/70 text-xs">
+                I agree to be contacted via email
               </label>
             </div>
+          </div>
 
-            <div className="flex gap-3">
-              {socialLinks.map((social, index) => (
-                <motion.a
-                  key={index}
-                  href={social.href}
-                  whileHover={{ scale: 1.1 }}
-                  className="w-10 h-10 bg-neutral-900 border border-white/10 rounded-full flex items-center justify-center text-white/70 hover:bg-blue-600 hover:text-white hover:shadow-lg hover:shadow-blue-500/30 transition-all"
-                >
-                  <social.icon className="w-5 h-5" />
-                </motion.a>
-              ))}
-            </div>
-          </motion.div>
-
-          {/* Services */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.1 }}
-          >
-            <h3 className="text-2xl font-bold text-white mb-6">Services</h3>
-
+          {/* Company Column */}
+          <div>
+            <h3 className="text-lg font-bold text-primary mb-6">Company</h3>
             <ul className="space-y-3">
-              {services.map((service) => (
+              {companyLinks.map((link) => (
+                <li key={link}>
+                  <a
+                    href="#"
+                    className="text-white/80 hover:text-white transition-colors text-sm"
+                  >
+                    {link}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Core Services Column */}
+          <div>
+            <h3 className="text-lg font-bold text-primary mb-6">Core Services</h3>
+            <ul className="space-y-3">
+              {coreServices.map((service) => (
                 <li key={service}>
                   <a
                     href="#"
-                    className="text-white/70 hover:text-orange-400 transition-colors"
+                    className="text-white/80 hover:text-white transition-colors text-sm"
                   >
                     {service}
                   </a>
                 </li>
               ))}
             </ul>
-          </motion.div>
+          </div>
 
-          {/* Company Info */}
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2 }}
-          >
-            <div className="flex items-center gap-2 mb-6">
-              <div className="bg-blue-600 p-2 rounded-lg">
-                <Wifi className="w-6 h-6 text-white" />
-              </div>
-              <span className="text-2xl font-bold text-white">
-                You<span className="text-blue-500">link</span>
-              </span>
-            </div>
-
-            <p className="text-white/70 mb-6 leading-relaxed">
-              The world's first and largest digital platform for collectibles
-              and services. Connect with us today.
-            </p>
-
-            <div className="space-y-4">
-              <div className="flex items-center gap-3">
-                <MapPin className="w-5 h-5 text-orange-400" />
-                <span className="text-white/70">
-                  Road Brooklyn Street, 600 86
-                  <br />
-                  New York, USA
-                </span>
-              </div>
-
-              <div className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-orange-400" />
-                <span className="text-white/70">Needhelp@company.com</span>
-              </div>
-
-              <div className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-orange-400" />
-                <span className="text-white/70">+0000 888 666 92</span>
-              </div>
-            </div>
-          </motion.div>
+          {/* Tech Services Column */}
+          <div>
+            <h3 className="text-lg font-bold text-primary mb-6">Tech Services</h3>
+            <ul className="space-y-3">
+              {techServices.map((service) => (
+                <li key={service}>
+                  <a
+                    href="#"
+                    className="text-white/80 hover:text-white transition-colors text-sm"
+                  >
+                    {service}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
 
         {/* Bottom Bar */}
         <div className="border-t border-white/10 pt-8">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="flex gap-6">
-              <a
-                href="#"
-                className="text-white/60 hover:text-orange-400 transition-colors"
-              >
-                Terms and Conditions
-              </a>
-              <a
-                href="#"
-                className="text-white/60 hover:text-orange-400 transition-colors"
-              >
-                Privacy Policy
-              </a>
-            </div>
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
+            <p className="text-white/60">
+              © Broadcast Technologies
+            </p>
 
-            <p className="text-white/50 text-sm">
-              Copyright © {new Date().getFullYear()}{" "}
-              <span className="text-orange-400">Youlink</span>. All Rights
-              Reserved.
+            <p className="text-white/50">
+              All Rights Reserved {new Date().getFullYear()}
             </p>
           </div>
         </div>
+      </div>
+
+      {/* Scroll to top button (optional) */}
+      <div className="absolute bottom-8 right-8">
+        <button className="w-12 h-12 bg-primary hover:bg-primary/90 rounded-full flex items-center justify-center text-white transition-all shadow-lg">
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
+          </svg>
+        </button>
       </div>
     </footer>
   );

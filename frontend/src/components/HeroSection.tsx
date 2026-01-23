@@ -1,124 +1,110 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Wifi } from "lucide-react";
+import { ArrowRight, Activity, Radio, Cpu } from "lucide-react";
 import { Button } from "../components/ui/button";
-import RotatingGlobe from "./RotatingGlobe";
 
 const HeroSection = () => {
   return (
     <section
-      className="relat
-    ive min-h-screen bg-[#0f172a] linear-gradient(#0f172a, #1e293b) pt-32 pb-16 overflow-hidden"
+      id="hero"
+      className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0a0a0a]"
     >
-      {/* Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-10 w-72 h-72 bg-[#3b82f6]/10 rounded-full blur-3xl" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-[#f59e0b]/10 rounded-full blur-3xl" />
+      {/* Background Image */}
+      <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-[#0a0a0a] z-10" />
+        <img
+          src="/hero-bg.png"
+          alt="Broadcast Digitally High Tech Background"
+          className="w-full h-full object-cover opacity-80"
+        />
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[70vh]">
-          {/* Left Content */}
+      {/* Content */}
+      <div className="container mx-auto px-4 relative z-20 pt-20 pb-24 lg:pb-0">
+        <div className="max-w-4xl mx-auto text-center">
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            {/* Badge */}
-            <motion.div
-              className="inline-flex items-center gap-2 bg-[#3b82f6]/20 text-primary px-4 py-2 rounded-full mb-6"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-            >
-              <span className="text-sm font-medium uppercase tracking-wider">
-                Best IT Solutions
+            {/* Tagline Badge */}
+            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-sm mb-8">
+              <Activity className="w-4 h-4 text-primary" />
+              <span className="text-sm font-medium text-primary uppercase tracking-wider">
+                Where Heritage Engineering Meets Digital Innovation
               </span>
-            </motion.div>
+            </div>
 
-            {/* Heading */}
-            <motion.h1
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-[#ffffff] leading-tight mb-6"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
-            >
-              Enjoy Fast <span className="text-[#f59e0b]">Internet</span>
-              <br />
-              Solution
-              <span className="inline-block ml-3 w-20 h-1 bg-[#f59e0b] rounded-full align-middle" />
-            </motion.h1>
+            {/* Main Title */}
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white tracking-tight leading-tight mb-0">
+              BROADCAST
+              <span className="text-primary block mt-1">DIGITALLY</span>
+            </h1>
 
             {/* Subtitle */}
-            <motion.div
-              className="flex items-center gap-4 mb-8"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.4 }}
-            >
-              <span className="text-[#ffffff]/70">
-                Subscribe & get 1 month WiFi Free
-              </span>
-              <Wifi className="w-5 h-5 text-[#f59e0b]" />
-              <span className="text-[#ffffff]/50">|</span>
-              <span className="text-[#ffffff]/70">month 1 /</span>
-              <span className="text-4xl font-bold text-[#f59e0b]">$99</span>
-            </motion.div>
+            <p className="text-xl md:text-2xl text-gray-300 font-light mb-10 max-w-2xl mx-auto leading-relaxed">
+              Engineering the Next Wave of Media.
+            </p>
 
-            {/* CTA Button */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.5 }}
-            >
+            {/* CTA Buttons */}
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button
                 size="lg"
-                className="bg-[#3b82f6] hover:bg-[#3b82f6]/90 text-[#ffffff] px-8 py-6 text-lg group"
+                className="bg-primary hover:bg-primary/90 text-white px-8 py-6 text-lg rounded-full min-w-[200px]"
               >
-                Learn More
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                Explore Solutions
+                <ArrowRight className="ml-2 w-5 h-5" />
               </Button>
-            </motion.div>
-          </motion.div>
-
-          {/* Right Content - Globe */}
-          <motion.div
-            className="flex justify-center lg:justify-end"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
-          >
-            <div className="relative">
-              {/* Discount Badge */}
-              <motion.div
-                className="absolute -left-4 top-8 z-10"
-                animate={{ y: [0, -10, 0] }}
-                transition={{ duration: 2, repeat: Infinity }}
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-white/20 text-black bg-white hover:bg-white/90 px-8 py-6 text-lg rounded-full min-w-[200px]"
               >
-                <div className="bg-[#f59e0b] text-[#f59e0b]-foreground rounded-full w-20 h-20 flex flex-col items-center justify-center shadow-lg">
-                  <span className="text-2xl font-bold">40%</span>
-                  <span className="text-xs font-medium">OFF</span>
-                </div>
-              </motion.div>
-
-              <RotatingGlobe />
+                Contact Us
+              </Button>
             </div>
           </motion.div>
         </div>
+
+        {/* Feature Highlights (Optional but good for visuals) */}
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-8 max-w-5xl mx-auto"
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+        >
+          {[
+            {
+              icon: Radio,
+              label: "RF Engineering",
+              desc: "Precision transmission systems",
+            },
+            {
+              icon: Cpu,
+              label: "IP Workflows",
+              desc: "SMPTE 2110 / AES67 Ready",
+            },
+            {
+              icon: Activity,
+              label: "Digital Integration",
+              desc: "Future-proof infrastructure",
+            },
+          ].map((item, index) => (
+            <div
+              key={index}
+              className="bg-white/5 backdrop-blur-sm border border-white/10 p-6 rounded-xl hover:bg-white/10 transition-colors cursor-default"
+            >
+              <div className="flex items-center gap-3 mb-3">
+                <item.icon className="w-8 h-8 text-primary" />
+                <h3 className="text-lg font-semibold text-white">{item.label}</h3>
+              </div>
+              <p className="text-white/60 text-sm">{item.desc}</p>
+            </div>
+          ))}
+        </motion.div>
       </div>
 
-      {/* Bottom Wave */}
-      <div className="absolute bottom-0 left-0 right-0">
-        <svg
-          viewBox="0 0 1440 120"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <path
-            d="M0 120L60 105C120 90 240 60 360 45C480 30 600 30 720 37.5C840 45 960 60 1080 67.5C1200 75 1320 75 1380 75L1440 75V120H1380C1320 120 1200 120 1080 120C960 120 840 120 720 120C600 120 480 120 360 120C240 120 120 120 60 120H0Z"
-            fill="hsl(var(--background))"
-          />
-        </svg>
-      </div>
+      {/* Decorative overlaid gradient at bottom to merge with next section */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-[#0f172a] to-transparent z-10" />
     </section>
   );
 };

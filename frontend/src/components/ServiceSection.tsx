@@ -1,37 +1,59 @@
 import { motion } from "framer-motion";
-import { Shield, Tv, Radio, Wifi, ArrowUpRight } from "lucide-react";
+import { Mic2, Tv, Cable, Settings, CheckCircle2 } from "lucide-react";
 
 const services = [
   {
-    icon: Shield,
-    title: "Internet & Cyber Security",
-    description:
-      "We uphold industry standards with customer-oriented security solutions for all your needs.",
+    icon: Mic2,
+    title: "Radio & Audio Solutions",
+    description: "We specialize in turnkey FM, AM, and Digital Radio (DRM/DAB+) setups.",
+    features: [
+      "SITC of High-Power Transmitters",
+      "Visual Radio & Podcast Studio integration",
+      "Automated Traffic & Billing software deployment"
+    ],
+    className: "md:col-span-2"
   },
   {
     icon: Tv,
-    title: "Business Smart Television",
-    description:
-      "Experience crystal clear 4K streaming with our smart TV solutions for homes and offices.",
+    title: "Television & Video Infrastructure",
+    description: "From Newsrooms to Sports Production.",
+    features: [
+      "4K/UHD/HDR Workflow Design",
+      "Virtual Studios and Augmented Reality (AR) Graphics",
+      "Master Control Room (MCR) & Playout Automation"
+    ],
+    className: "md:col-span-1"
   },
   {
-    icon: Radio,
-    title: "Family Internet Phone Pack",
-    description:
-      "Stay connected with family bundles that include high-speed internet and phone services.",
+    icon: Settings,
+    title: "Managed Services (O&M)",
+    description: "Let us handle the technology while you handle the content.",
+    features: [
+      "24/7 On-site Technical Support",
+      "Annual Maintenance Contracts (AMC)",
+      "Frequency Coordination & Regulatory Consultancy"
+    ],
+    className: "md:col-span-1"
   },
   {
-    icon: Wifi,
-    title: "Fiber Line & Broadband",
-    description:
-      "Ultra-fast fiber optic connections delivering speeds up to 1Gbps for seamless browsing.",
+    icon: Cable,
+    title: "Connectivity & Testing (The Comcon Edge)",
+    description: "The backbone of any station is its connectivity.",
+    features: [
+      "Cabling: Authorized integration of Belden, Neutrik, and SMPTE Fiber",
+      "T&M: Comprehensive Test & Measurement services for RF and AV quality",
+      "Remote Production: Low-latency IP links for live event coverage"
+    ],
+    className: "md:col-span-2"
   },
 ];
 
 const ServicesSection = () => {
   return (
-    <section id="services" className="py-20 bg-[#ffffff]">
-      <div className="container mx-auto px-4">
+    <section id="solutions" className="py-24 bg-[#0f172a] relative">
+      <div className="absolute inset-0 bg-grid-white/[0.02] bg-[length:30px_30px]" />
+
+      <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
         <motion.div
           className="text-center mb-16"
@@ -39,77 +61,52 @@ const ServicesSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
         >
-          <span className="text-[#f59e0b] font-semibold uppercase tracking-wider text-sm">
-            Best IT Services
+          <span className="text-primary font-semibold uppercase tracking-wider text-sm">
+            End-to-End Capabilities
           </span>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-black mt-4">
-            Best Digital <span className="text-[#f59e0b]">Broadband</span>
-            <br />
-            Service For People
-            <span className="inline-block ml-3 w-16 h-1 bg-[#f59e0b] rounded-full align-middle" />
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mt-4 max-w-3xl mx-auto">
+            Our <span className="text-primary">Solutions</span> & Services
           </h2>
+          <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
+            Comprehensive tools and expertise to power every aspect of your media operations.
+          </p>
         </motion.div>
 
-        {/* Services Grid */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {/* Services Bento Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
-              className="group bg-card p-8 rounded-2xl border border-border hover:shadow-xl transition-all duration-300 hover:-translate-y-2"
+              className={`group bg-white/5 p-8 rounded-2xl border border-white/10 hover:border-primary/50 transition-all duration-300 hover:bg-white/[0.07] ${service.className}`}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
             >
-              {/* Icon */}
-              <div className="mb-6 relative">
-                <div className="w-16 h-16 bg-[#3b82f6]/10 rounded-xl flex items-center justify-center group-hover:bg-[#3b82f6] transition-colors">
-                  <service.icon className="w-8 h-8 text-primary group-hover:text-[#ffffff] transition-colors" />
+              <div className="flex items-center gap-4 mb-6">
+                <div className="bg-primary/20 p-4 rounded-xl group-hover:scale-110 transition-transform duration-300">
+                  <service.icon className="w-8 h-8 text-primary" />
                 </div>
-                {/* Decorative accent */}
-                <div className="absolute -top-1 -right-1 w-4 h-4 bg-[#f59e0b] rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
+                <h3 className="text-2xl font-bold text-white">
+                  {service.title}
+                </h3>
               </div>
 
-              {/* Title */}
-              <h3 className="text-xl font-bold text-black mb-3">
-                {service.title}
-              </h3>
-
-              {/* Description */}
-              <p className="text-[#64748b] mb-6 leading-relaxed">
+              <p className="text-gray-400 mb-6 border-b border-white/10 pb-6 text-lg">
                 {service.description}
               </p>
 
-              {/* Link */}
-              <a
-                href="#"
-                className="inline-flex items-center gap-2 text-blue-500 font-medium hover:gap-3 transition-all"
-              >
-                <ArrowUpRight className="w-4 h-4" />
-                <span>Read More</span>
-              </a>
+              <ul className="space-y-3">
+                {service.features.map((feature, idx) => (
+                  <li key={idx} className="flex items-start gap-3 text-sm text-gray-300">
+                    <CheckCircle2 className="w-5 h-5 text-primary shrink-0" />
+                    <span>{feature}</span>
+                  </li>
+                ))}
+              </ul>
             </motion.div>
           ))}
         </div>
-
-        {/* Bottom Banner */}
-        <motion.div
-          className="mt-16 text-center"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-        >
-          <div className="inline-flex items-center gap-4 text-[#64748b]">
-            <div className="w-16 h-px bg-border" />
-            <span className="uppercase tracking-wider text-sm">
-              Bring them together and you overcome the ordinary.
-            </span>
-            <a href="#" className="text-primary font-medium hover:underline">
-              View More Services
-            </a>
-            <div className="w-16 h-px bg-border" />
-          </div>
-        </motion.div>
       </div>
     </section>
   );
