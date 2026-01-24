@@ -8,160 +8,127 @@ const Footer = () => {
     "Privacy Policy",
   ];
 
-  const coreServices = [
-    "Radio & Audio Solutions",
-    "Television & Video",
-    "Connectivity & Testing",
-    "Managed Services",
-  ];
-
-  const techServices = [
-    "4K/UHD/HDR Workflow",
-    "IP Workflows (SMPTE 2110)",
-    "Virtual Studios & AR",
-    "Frequency Coordination",
-    "Cloud Integration",
-    "Automation Systems",
-  ];
-
   return (
-    <footer className="bg-black py-8 relative overflow-hidden border-t border-white/10">
+    <footer className="bg-black pt-20 pb-10 relative overflow-hidden border-t border-white/10 font-sans">
       {/* Decorative background elements */}
-      <div className="absolute inset-0 opacity-5">
+      <div className="absolute inset-0 opacity-5 pointer-events-none">
         <div className="absolute top-0 right-0 w-96 h-96 bg-primary/20 rounded-full blur-3xl"></div>
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-blue-500/20 rounded-full blur-3xl"></div>
       </div>
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="grid md:grid-cols-4 gap-8 mb-8">
-          {/* Logo & Contact Form Column */}
-          <div>
-            <div className="flex items-center gap-3 mb-6">
-              <div className="bg-[#63c1b3]/20 p-2 rounded-lg border border-[#63c1b3]/30">
+      <div className="container mx-auto px-6 lg:px-12 relative z-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-20 mb-20">
+          {/* Column 1: Brand & Identity */}
+          <div className="flex flex-col space-y-6">
+            <div className="flex items-center gap-3">
+              <div className="bg-[#63c1b3]/10 p-2.5 rounded-xl border border-[#63c1b3]/20">
                 <Activity className="w-6 h-6 text-[#63c1b3]" />
               </div>
               <div className="flex flex-col text-left">
-                <span className="text-xl font-bold tracking-tight text-[#63c1b3] uppercase leading-none">
+                <span className="text-2xl font-bold tracking-tight text-[#63c1b3] uppercase leading-none">
                   Broadcast
                 </span>
-                <span className="text-xs font-medium tracking-[0.2em] text-[#63c1b3] uppercase leading-none mt-1">
+                <span className="text-xs font-semibold tracking-[0.25em] text-[#63c1b3] uppercase leading-none mt-1.5 opacity-80">
                   Digitally
                 </span>
               </div>
             </div>
-            <p className="text-white/60 text-xs mb-6 uppercase tracking-wider">
+
+            <p className="text-white/50 text-xs uppercase tracking-widest leading-relaxed max-w-xs">
               Where Heritage Engineering Meets Digital Innovation
             </p>
+          </div>
 
-            <h3 className="text-lg font-bold text-primary mb-4">Stay Connected</h3>
-            <p className="text-white/70 text-sm mb-4">
-              Your Partner in the New Era of Media.
-            </p>
+          {/* Column 2: Connect (Card Style) */}
+          <div className="flex flex-col space-y-6">
+            <div>
+              <h3 className="text-lg font-bold text-white mb-2">Stay Connected</h3>
+              <p className="text-white/60 text-sm">
+                Your Partner in the New Era of Media.
+              </p>
+            </div>
 
-            <div className="space-y-4 mb-6 text-sm">
-              <div className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-primary shrink-0 mt-0.5" />
-                <p className="text-white/70">
+            <div className="bg-white/5 border border-white/10 rounded-2xl p-6 space-y-5 backdrop-blur-sm hover:border-white/20 transition-colors duration-300">
+              <div className="flex items-start gap-4 group">
+                <div className="bg-primary/10 p-2 rounded-lg group-hover:bg-primary/20 transition-colors">
+                  <MapPin className="w-4 h-4 text-primary shrink-0" />
+                </div>
+                <p className="text-white/70 text-sm leading-relaxed">
                   123 Media Tech Park,<br />Innovation District, NY 10001
                 </p>
               </div>
 
-              <div className="flex items-center gap-3">
-                <Phone className="w-5 h-5 text-primary shrink-0" />
-                <p className="text-white/70">+1 (555) 123-4567</p>
+              <div className="flex items-center gap-4 group">
+                <div className="bg-primary/10 p-2 rounded-lg group-hover:bg-primary/20 transition-colors">
+                  <Phone className="w-4 h-4 text-primary shrink-0" />
+                </div>
+                <p className="text-white/70 text-sm group-hover:text-white transition-colors">+1 (555) 123-4567</p>
               </div>
 
-              <div className="flex items-center gap-3">
-                <Mail className="w-5 h-5 text-primary shrink-0" />
-                <p className="text-white/70">contact@broadcastdigitally.com</p>
+              <div className="flex items-center gap-4 group">
+                <div className="bg-primary/10 p-2 rounded-lg group-hover:bg-primary/20 transition-colors">
+                  <Mail className="w-4 h-4 text-primary shrink-0" />
+                </div>
+                <p className="text-white/70 text-sm group-hover:text-white transition-colors">contact@broadcastdigitally.com</p>
               </div>
 
-              <div className="flex items-center gap-3">
-                <Globe className="w-5 h-5 text-primary shrink-0" />
-                <p className="text-white/70">www.broadcastdigitally.com</p>
+              <div className="flex items-center gap-4 group">
+                <div className="bg-primary/10 p-2 rounded-lg group-hover:bg-primary/20 transition-colors">
+                  <Globe className="w-4 h-4 text-primary shrink-0" />
+                </div>
+                <p className="text-white/70 text-sm group-hover:text-white transition-colors">www.broadcastdigitally.com</p>
               </div>
             </div>
           </div>
 
-          {/* Company Column */}
-          <div>
-            <h3 className="text-lg font-bold text-primary mb-6">Company</h3>
-            <ul className="space-y-3">
+          {/* Column 3: Company Links */}
+          <div className="flex flex-col space-y-6 md:pl-10">
+            <h3 className="text-lg font-bold text-white">Company</h3>
+            <ul className="space-y-4">
               {companyLinks.map((link) => (
                 <li key={link}>
                   <a
                     href="#"
-                    className="text-white/80 hover:text-white transition-colors text-sm"
+                    className="text-white/60 hover:text-primary transition-all duration-300 text-sm flex items-center gap-2 group"
                   >
+                    <span className="w-1.5 h-1.5 rounded-full bg-white/20 group-hover:bg-primary transition-colors"></span>
                     {link}
                   </a>
                 </li>
               ))}
             </ul>
           </div>
-
-          {/* Core Services Column */}
-          <div>
-            <h3 className="text-lg font-bold text-primary mb-6">Core Services</h3>
-            <ul className="space-y-3">
-              {coreServices.map((service) => (
-                <li key={service}>
-                  <a
-                    href="#"
-                    className="text-white/80 hover:text-white transition-colors text-sm"
-                  >
-                    {service}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Tech Services Column */}
-          <div>
-            <h3 className="text-lg font-bold text-primary mb-6">Tech Services</h3>
-            <ul className="space-y-3">
-              {techServices.map((service) => (
-                <li key={service}>
-                  <a
-                    href="#"
-                    className="text-white/80 hover:text-white transition-colors text-sm"
-                  >
-                    {service}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
         </div>
 
-        {/* Bottom Bar */}
-        <div className="border-t border-white/10 pt-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-4 text-sm">
-            <div className="flex flex-col md:flex-row gap-4 items-center">
-              <p className="text-white/60">
-                © Broadcast Digitally
-              </p>
-              <span className="hidden md:inline text-white/20">|</span>
-              <p className="text-primary/60">
-                www.broadcastdigitally.com
-              </p>
-            </div>
+        {/* Bottom Bar separator */}
+        <div className="h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent mb-8"></div>
 
-            <p className="text-white/50">
+        {/* Bottom Bar */}
+        <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+          <div className="flex flex-col md:flex-row gap-6 items-center text-sm text-white/40">
+            <p>
+              © Broadcast Digitally
+            </p>
+            <span className="hidden md:block w-1 h-1 rounded-full bg-white/20"></span>
+            <p>
+              www.broadcastdigitally.com
+            </p>
+            <span className="hidden md:block w-1 h-1 rounded-full bg-white/20"></span>
+            <p>
               All Rights Reserved {new Date().getFullYear()}
             </p>
           </div>
         </div>
       </div>
 
-      {/* Scroll to top button (optional) */}
-      <div className="absolute bottom-8 right-8">
+      {/* Scroll to top button - positioned in corner */}
+      <div className="absolute bottom-8 right-8 z-50">
         <button
+          type="button"
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="w-12 h-12 bg-primary hover:bg-primary/90 rounded-full flex items-center justify-center text-white transition-all shadow-lg cursor-pointer"
+          className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors border border-primary/30 cursor-pointer shadow-lg"
         >
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />
           </svg>
         </button>
