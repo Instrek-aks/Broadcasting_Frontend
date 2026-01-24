@@ -1,6 +1,9 @@
+import { useState } from "react";
 import { Activity, MapPin, Phone, Mail, Globe } from "lucide-react";
 
 const Footer = () => {
+  const [isConnectOpen, setIsConnectOpen] = useState(false);
+  const [isCompanyOpen, setIsCompanyOpen] = useState(false);
   const companyLinks = [
     "Who We Are",
     "Why Partner With Us",
@@ -17,7 +20,7 @@ const Footer = () => {
       </div>
 
       <div className="container mx-auto px-6 lg:px-12 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-20 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-2 md:gap-12 lg:gap-20 mb-12 md:mb-20">
           {/* Column 1: Brand & Identity */}
           <div className="flex flex-col space-y-6">
             <div className="flex items-center gap-3">
@@ -41,14 +44,20 @@ const Footer = () => {
 
           {/* Column 2: Connect (Card Style) */}
           <div className="flex flex-col space-y-6">
-            <div>
+            <div
+              className="cursor-pointer md:cursor-default"
+              onClick={() => setIsConnectOpen(!isConnectOpen)}
+            >
               <h3 className="text-lg font-bold text-white mb-2">Stay Connected</h3>
-              <p className="text-white/60 text-sm">
+              <p className="text-white/60 text-sm hidden md:block">
                 Your Partner in the New Era of Media.
               </p>
             </div>
 
-            <div className="bg-white/5 border border-white/10 rounded-2xl p-6 space-y-5 backdrop-blur-sm hover:border-white/20 transition-colors duration-300">
+            <div className={`bg-white/5 border border-white/10 rounded-2xl p-6 space-y-5 backdrop-blur-sm hover:border-white/20 transition-all duration-300 md:block ${isConnectOpen ? "block" : "hidden"}`}>
+              <p className="text-white/60 text-sm mb-4 md:hidden">
+                Your Partner in the New Era of Media.
+              </p>
               <div className="flex items-start gap-4 group">
                 <div className="bg-primary/10 p-2 rounded-lg group-hover:bg-primary/20 transition-colors">
                   <MapPin className="w-4 h-4 text-primary shrink-0" />
@@ -83,8 +92,13 @@ const Footer = () => {
 
           {/* Column 3: Company Links */}
           <div className="flex flex-col space-y-6 md:pl-10">
-            <h3 className="text-lg font-bold text-white">Company</h3>
-            <ul className="space-y-4">
+            <div
+              className="cursor-pointer md:cursor-default"
+              onClick={() => setIsCompanyOpen(!isCompanyOpen)}
+            >
+              <h3 className="text-lg font-bold text-white">Company</h3>
+            </div>
+            <ul className={`space-y-4 md:block ${isCompanyOpen ? "block" : "hidden"}`}>
               {companyLinks.map((link) => (
                 <li key={link}>
                   <a
@@ -122,11 +136,11 @@ const Footer = () => {
       </div>
 
       {/* Scroll to top button - positioned in corner */}
-      <div className="absolute bottom-8 right-8 z-50">
+      <div className="absolute bottom-4 right-4 md:bottom-8 md:right-8 z-50">
         <button
           type="button"
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors border border-primary/30 cursor-pointer shadow-lg"
+          className="w-10 h-10 md:w-12 md:h-12 rounded-full bg-primary/10 flex items-center justify-center hover:bg-primary/20 transition-colors border border-primary/30 cursor-pointer shadow-lg"
         >
           <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 10l7-7m0 0l7 7m-7-7v18" />

@@ -35,7 +35,7 @@ const HeroSection = () => {
             </div>
 
             {/* Main Title */}
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white tracking-tight leading-none mb-0">
+            <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold text-white tracking-tight leading-none mb-0">
               BROADCAST
               <span className="text-[#63c1b3] block">DIGITALLY</span>
             </h1>
