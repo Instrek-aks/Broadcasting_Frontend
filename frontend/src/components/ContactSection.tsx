@@ -3,12 +3,12 @@ import { ArrowRight, Users, Zap } from "lucide-react";
 
 const ContactSection = () => {
     return (
-        <section id="contact" className="relative overflow-hidden bg-white py-24">
-            {/* Unified Gradient Background for the whole section */}
+        <section id="contact" className="relative overflow-hidden bg-slate-200 py-24">
+            {/* Unified Gradient Background for the whole section - Much Darker Vignette */}
             <div
                 className="absolute inset-0 pointer-events-none"
                 style={{
-                    background: 'radial-gradient(circle at center, transparent 0%, rgba(148, 163, 184, 0.05) 40%, rgba(71, 85, 105, 0.15) 80%, rgba(30, 41, 59, 0.2) 100%)'
+                    background: 'radial-gradient(circle at center, transparent 0%, rgba(30, 41, 59, 0.1) 30%, rgba(15, 23, 42, 0.45) 70%, rgba(2, 6, 23, 0.7) 100%)'
                 }}
             />
 
