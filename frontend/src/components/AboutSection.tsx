@@ -8,10 +8,9 @@ const AboutSection = () => {
       <div className="absolute top-0 right-0 w-1/3 h-full bg-primary/5 skewed-bg pointer-events-none" />
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
-          {/* Left Column - Image + Core Values */}
-          <div className="space-y-12">
-            {/* Image */}
+        <div className="grid lg:grid-cols-2 gap-16 items-start mb-16">
+          {/* Left Column - Image */}
+          <div className="w-full">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -28,48 +27,8 @@ const AboutSection = () => {
                   className="w-full h-full object-cover"
                 />
               </div>
-              {/* Decorative Element */}
               <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-primary/20 rounded-full blur-2xl z-0" />
               <div className="absolute -top-6 -left-6 w-32 h-32 bg-blue-500/20 rounded-full blur-2xl z-0" />
-            </motion.div>
-
-            {/* Core Values - Now below the image */}
-            <motion.div
-              className="space-y-6"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              <h3 className="text-2xl md:text-3xl font-bold text-[#63c1b3] mb-6 border-l-4 border-[#63c1b3] pl-4 uppercase tracking-tight">
-                Our Core Values
-              </h3>
-              <div className="grid gap-6">
-                {[
-                  {
-                    title: "Precision",
-                    desc: "Every decibel and every pixel matters. We adhere to the highest international standards of engineering.",
-                  },
-                  {
-                    title: "Innovation",
-                    desc: "We specialize in IP-based workflows (SMPTE 2110 / AES67), ensuring your infrastructure is future-ready.",
-                  },
-                  {
-                    title: "Partnership",
-                    desc: "We are a lifecycle partner. From the first frequency study to the 1,000th hour of broadcast, we are with you.",
-                  },
-                ].map((value, idx) => (
-                  <div key={idx} className="flex gap-5">
-                    <div className="mt-1 bg-primary/20 p-2.5 rounded-lg h-fit">
-                      <Check className="w-5 h-5 text-primary" />
-                    </div>
-                    <div>
-                      <h4 className="text-white text-xl font-bold mb-1">{value.title}</h4>
-                      <p className="text-gray-400 text-sm md:text-base leading-relaxed">{value.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
             </motion.div>
           </div>
 
@@ -90,7 +49,6 @@ const AboutSection = () => {
               }
             }}
           >
-            {/* Section Header */}
             <motion.div
               className="mb-8"
               variants={{
@@ -111,7 +69,48 @@ const AboutSection = () => {
           </motion.div>
         </div>
 
-        {/* Mission & Vision - Moved to bottom */}
+        {/* Core Values - Full Width Below Top Grid */}
+        <motion.div
+          className="mt-16 space-y-8"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          <h3 className="text-2xl md:text-3xl font-bold text-[#63c1b3] mb-6 border-l-4 border-[#63c1b3] pl-4 uppercase tracking-tight">
+            Our Core Values
+          </h3>
+          <div className="space-y-4">
+            {[
+              {
+                title: "Precision",
+                desc: "Every decibel and every pixel matters. We adhere to the highest international standards of engineering.",
+              },
+              {
+                title: "Innovation",
+                desc: "We specialize in IP-based workflows (SMPTE 2110 / AES67), ensuring your infrastructure is future-ready.",
+              },
+              {
+                title: "Partnership",
+                desc: "We are a lifecycle partner. From the first frequency study to the 1,000th hour of broadcast, we are with you.",
+              },
+            ].map((value, idx) => (
+              <div key={idx} className="flex gap-5 items-center">
+                <div className="bg-primary/20 p-2 rounded-lg h-fit flex-shrink-0">
+                  <Check className="w-5 h-5 text-primary" />
+                </div>
+                <div className="min-w-0">
+                  <p className="text-gray-400 text-sm md:text-base whitespace-nowrap overflow-x-auto no-scrollbar">
+                    <span className="text-white text-lg md:text-xl font-bold mr-3">{value.title}</span>
+                    {value.desc}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* Mission & Vision */}
         <motion.div
           className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mt-20"
           initial={{ opacity: 0, y: 30 }}
