@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Activity } from "lucide-react";
+
 
 const HeroSection = () => {
   return (
@@ -26,9 +26,8 @@ const HeroSection = () => {
             transition={{ duration: 0.8 }}
           >
             {/* Tagline Badge */}
-            <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 backdrop-blur-sm mb-6 md:mb-8">
-              <Activity className="w-4 h-4 text-primary" />
-              <span className="text-xs md:text-sm font-medium text-primary uppercase tracking-wider">
+            <div className="mb-2">
+              <span className="text-xs md:text-sm font-medium text-[#63c1b3] uppercase tracking-wider">
                 Where Heritage Engineering Meets Digital Innovation
               </span>
             </div>

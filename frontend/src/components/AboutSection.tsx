@@ -9,29 +9,71 @@ const AboutSection = () => {
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-start">
-          {/* Left Content - Image */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.8 }}
-            className="relative"
-          >
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10">
-              <div className="absolute inset-0 bg-primary/20 mix-blend-overlay z-10" />
-              <img
-                src="/engineer.png"
-                alt="Broadcast Engineer"
-                loading="lazy"
-                className="w-full h-full object-cover"
-              />
-            </div>
-            {/* Decorative Element */}
-            <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-primary/20 rounded-full blur-2xl z-0" />
-            <div className="absolute -top-6 -left-6 w-32 h-32 bg-blue-500/20 rounded-full blur-2xl z-0" />
-          </motion.div>
+          {/* Left Column - Image + Core Values */}
+          <div className="space-y-12">
+            {/* Image */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="relative"
+            >
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl border border-white/10">
+                <div className="absolute inset-0 bg-primary/20 mix-blend-overlay z-10" />
+                <img
+                  src="/engineer.png"
+                  alt="Broadcast Engineer"
+                  loading="lazy"
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              {/* Decorative Element */}
+              <div className="absolute -bottom-6 -right-6 w-32 h-32 bg-primary/20 rounded-full blur-2xl z-0" />
+              <div className="absolute -top-6 -left-6 w-32 h-32 bg-blue-500/20 rounded-full blur-2xl z-0" />
+            </motion.div>
 
-          {/* Right Content - Text */}
+            {/* Core Values - Now below the image */}
+            <motion.div
+              className="space-y-6"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <h3 className="text-2xl md:text-3xl font-bold text-[#63c1b3] mb-6 border-l-4 border-[#63c1b3] pl-4 uppercase tracking-tight">
+                Our Core Values
+              </h3>
+              <div className="grid gap-6">
+                {[
+                  {
+                    title: "Precision",
+                    desc: "Every decibel and every pixel matters. We adhere to the highest international standards of engineering.",
+                  },
+                  {
+                    title: "Innovation",
+                    desc: "We specialize in IP-based workflows (SMPTE 2110 / AES67), ensuring your infrastructure is future-ready.",
+                  },
+                  {
+                    title: "Partnership",
+                    desc: "We are a lifecycle partner. From the first frequency study to the 1,000th hour of broadcast, we are with you.",
+                  },
+                ].map((value, idx) => (
+                  <div key={idx} className="flex gap-5">
+                    <div className="mt-1 bg-primary/20 p-2.5 rounded-lg h-fit">
+                      <Check className="w-5 h-5 text-primary" />
+                    </div>
+                    <div>
+                      <h4 className="text-white text-xl font-bold mb-1">{value.title}</h4>
+                      <p className="text-gray-400 text-sm md:text-base leading-relaxed">{value.desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+
+          {/* Right Column - Text Content */}
           <motion.div
             initial="hidden"
             whileInView="visible"
@@ -66,51 +108,12 @@ const AboutSection = () => {
                 At Broadcast Digitally, we don't just build stations; we build legacies. As the media landscape shifts from traditional hardware to software-defined environments, we provide the technical bridge for broadcasters to cross over without losing signal integrity.
               </p>
             </motion.div>
-
-            {/* Core Values */}
-            <motion.div
-              className="space-y-6 mb-10"
-              variants={{
-                hidden: { opacity: 0, y: 20 },
-                visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
-              }}
-            >
-              <h3 className="text-2xl md:text-3xl font-bold text-[#63c1b3] mb-6 border-l-4 border-[#63c1b3] pl-4 uppercase tracking-tight">
-                Our Core Values
-              </h3>
-              <div className="grid gap-6">
-                {[
-                  {
-                    title: "Precision",
-                    desc: "Every decibel and every pixel matters. We adhere to the highest international standards of engineering.",
-                  },
-                  {
-                    title: "Innovation",
-                    desc: "We specialize in IP-based workflows (SMPTE 2110 / AES67), ensuring your infrastructure is future-ready.",
-                  },
-                  {
-                    title: "Partnership",
-                    desc: "We are a lifecycle partner. From the first frequency study to the 1,000th hour of broadcast, we are with you.",
-                  },
-                ].map((value, idx) => (
-                  <div key={idx} className="flex gap-5">
-                    <div className="mt-1 bg-primary/20 p-2.5 rounded-lg h-fit">
-                      <Check className="w-5 h-5 text-primary" />
-                    </div>
-                    <div>
-                      <h4 className="text-white text-xl font-bold mb-1">{value.title}</h4>
-                      <p className="text-gray-400 text-sm md:text-base leading-relaxed">{value.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </motion.div>
           </motion.div>
         </div>
 
         {/* Mission & Vision - Moved to bottom */}
         <motion.div
-          className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto"
+          className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto mt-20"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}

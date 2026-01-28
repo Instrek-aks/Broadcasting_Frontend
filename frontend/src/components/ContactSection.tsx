@@ -18,7 +18,7 @@ const ContactSection = () => {
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="group bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:border-[#63c1b3]/50 transition-all duration-300"
+                            className="group bg-gray-100 rounded-2xl p-8 border border-gray-100 hover:border-[#63c1b3]/50 transition-all duration-300"
                         >
                             <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
                                 <div className="bg-[#63c1b3]/15 p-4 rounded-xl group-hover:scale-110 transition-transform duration-300 shadow-sm group-hover:shadow-teal-500/20">
@@ -35,7 +35,7 @@ const ContactSection = () => {
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="group bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:border-[#63c1b3]/50 transition-all duration-300"
+                            className="group bg-gray-100 rounded-2xl p-8 border border-gray-100 hover:border-[#63c1b3]/50 transition-all duration-300"
                         >
                             <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
                                 <div className="bg-[#63c1b3]/15 p-4 rounded-xl group-hover:scale-110 transition-transform duration-300 shadow-sm group-hover:shadow-teal-500/20">
