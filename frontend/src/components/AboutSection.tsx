@@ -8,7 +8,7 @@ const AboutSection = () => {
       <div className="absolute top-0 right-0 w-1/3 h-full bg-primary/5 skewed-bg pointer-events-none" />
 
       <div className="container mx-auto px-4 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-16 items-start">
           {/* Left Content - Image */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -56,7 +56,7 @@ const AboutSection = () => {
                 visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
               }}
             >
-              <span className="text-primary font-semibold uppercase tracking-wider text-sm">
+              <span className="text-primary font-semibold uppercase tracking-wider text-base md:text-lg">
                 Who We Are & Our Philosophy
               </span>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mt-4 mb-6 leading-tight">
@@ -110,7 +110,7 @@ const AboutSection = () => {
 
         {/* Mission & Vision - Moved to bottom */}
         <motion.div
-          className="grid md:grid-cols-2 gap-8 mt-20 max-w-5xl mx-auto"
+          className="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto"
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
@@ -123,7 +123,7 @@ const AboutSection = () => {
               </div>
               <h4 className="text-[#63c1b3] text-2xl font-bold tracking-tight">Our Mission</h4>
             </div>
-            <p className="text-gray-400 text-lg leading-relaxed font-light">
+            <p className="text-gray-300 text-lg leading-relaxed font-light">
               To empower creators and broadcasters by removing technical complexity through world-class systems integration.
             </p>
           </div>
@@ -135,7 +135,7 @@ const AboutSection = () => {
               </div>
               <h4 className="text-[#63c1b3] text-2xl font-bold tracking-tight">Our Vision</h4>
             </div>
-            <p className="text-gray-400 text-lg leading-relaxed font-light">
+            <p className="text-gray-300 text-lg leading-relaxed font-light">
               To be the global leader in transitioning the broadcast industry into a fully digital, automated, and cloud-capable era.
             </p>
           </div>

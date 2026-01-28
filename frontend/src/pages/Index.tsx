@@ -7,6 +7,9 @@ const AboutSection = lazy(() => import("../components/AboutSection"));
 const ServicesSection = lazy(() => import("../components/ServiceSection"));
 const ContactSection = lazy(() => import("../components/ContactSection"));
 const Footer = lazy(() => import("../components/Footer"));
+// Eager load ScrollToTop since it might be needed quickly if user scrolls fast, or lazy load is fine too.
+// Let's lazy load it for consistency but it's small.
+const ScrollToTop = lazy(() => import("../components/ScrollToTop"));
 
 const Index = () => {
   return (
@@ -26,6 +29,7 @@ const Index = () => {
 
       <Suspense fallback={null}>
         <Footer />
+        <ScrollToTop />
       </Suspense>
     </div>
   );

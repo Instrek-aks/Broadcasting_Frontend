@@ -18,7 +18,7 @@ const ContactSection = () => {
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="group bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:border-[#63c1b3]/50 transition-all duration-300 hover:bg-gray-100/50 cursor-pointer"
+                            className="group bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:border-[#63c1b3]/50 transition-all duration-300"
                         >
                             <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
                                 <div className="bg-[#63c1b3]/15 p-4 rounded-xl group-hover:scale-110 transition-transform duration-300 shadow-sm group-hover:shadow-teal-500/20">
@@ -35,21 +35,17 @@ const ContactSection = () => {
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
-                            className="bg-gray-100/50 rounded-2xl p-8 border border-[#63c1b3]/50"
+                            className="group bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:border-[#63c1b3]/50 transition-all duration-300"
                         >
-                            <div className="flex items-center gap-4 mb-6">
-                                <div className="bg-[#63c1b3]/10 p-2 rounded-lg scale-110">
+                            <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                                <div className="bg-[#63c1b3]/15 p-4 rounded-xl group-hover:scale-110 transition-transform duration-300 shadow-sm group-hover:shadow-teal-500/20">
                                     <Users className="w-8 h-8 text-[#63c1b3]" />
                                 </div>
-                                <h3 className="text-2xl font-bold text-gray-900 font-sans">The Team</h3>
-                            </div>
-                            <p className="text-gray-600 mb-8 leading-relaxed text-lg font-light">
+                                The Team
+                            </h3>
+                            <p className="text-gray-600 text-lg leading-relaxed font-light">
                                 Our leadership comprises veterans who have executed pan-regional rollouts for the largest media houses in Asia. With a combined experience of over 50 years in RF, IP, and Satellite engineering, your vision is in safe hands.
                             </p>
-                            <div className="flex flex-wrap gap-4">
-                                <div className="px-5 py-2.5 bg-white rounded-lg text-[#63c1b3] font-bold border border-[#63c1b3]/50">50+ Years Experience</div>
-                                <div className="px-5 py-2.5 bg-white rounded-lg text-[#63c1b3] font-bold border border-[#63c1b3]/50">Pan-Regional Rollouts</div>
-                            </div>
                         </motion.div>
                     </div>
                 </div>
@@ -62,7 +58,7 @@ const ContactSection = () => {
                         initial={{ opacity: 0, y: 30 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="group bg-gray-50 rounded-3xl py-12 px-6 text-center border border-gray-100 max-w-5xl mx-auto hover:border-[#63c1b3]/30 transition-all duration-300 hover:bg-gray-100/50 cursor-pointer"
+                        className="bg-gray-50 rounded-3xl py-12 px-6 text-center max-w-5xl mx-auto border border-[#63c1b3]/50"
                     >
                         <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-6">
                             <Zap className="w-10 h-10 md:w-12 md:h-12 text-[#63c1b3] group-hover:scale-110 transition-transform duration-300" />
@@ -73,13 +69,13 @@ const ContactSection = () => {
                         <p className="text-gray-600 text-sm md:text-base max-w-2xl mx-auto mb-8 leading-relaxed font-light font-sans">
                             Reach out to our engineering team today for a comprehensive infrastructure audit or a new project consultation.
                         </p>
-                        <button
-                            className="text-gray-900 hover:text-[#63c1b3] transition-all flex items-center gap-3 mx-auto font-medium text-lg group"
-                            onClick={() => window.location.href = 'mailto:contact@broadcastdigitally.com'}
+                        <a
+                            href="mailto:contact@broadcastdigitally.com"
+                            className="inline-flex items-center gap-3 font-medium text-lg text-white bg-gradient-to-r from-[#63c1b3] to-[#4a9d8f] hover:from-[#4a9d8f] hover:to-[#63c1b3] transition-all group px-8 py-4 rounded-lg shadow-lg hover:shadow-xl"
                         >
-                            Start Your Project
+                            Get Started Today
                             <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
-                        </button>
+                        </a>
                     </motion.div>
                 </div>
             </div>
