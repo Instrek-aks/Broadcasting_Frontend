@@ -1,143 +1,87 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Mail, Phone, MapPin, Handshake, Users, Zap } from "lucide-react";
-import { Button } from "../components/ui/button";
+import { ArrowRight, Handshake, Users, Zap } from "lucide-react";
 
 const ContactSection = () => {
     return (
-        <section id="contact" className="py-24 bg-[#0a0a0a] relative overflow-hidden">
-            <div className="container mx-auto px-4 relative z-10">
-
-                {/* Why Partner With Us */}
-                <div className="grid lg:grid-cols-2 gap-16 mb-24">
-                    <motion.div
-                        initial={{ opacity: 0, x: -30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                    >
-                        <span className="text-primary font-semibold uppercase tracking-wider text-sm">
+        <section id="contact" className="relative overflow-hidden">
+            {/* Why Partner With Us - White Background */}
+            <div className="bg-white pt-24 pb-12">
+                <div className="container mx-auto px-4 relative z-10">
+                    <div className="mb-16 text-center">
+                        <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
                             Why Partner With Us
-                        </span>
-                        <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-white mt-4 mb-6">
-                            <span className="text-[#63c1b3]">The Broadcast Digitally</span> Difference
-                        </h2>
-                        <p className="text-gray-400 text-lg leading-relaxed mb-8">
-                            What sets us apart from the traditional market is our Vendor-Agnostic Approach. We work with the world's leading OEMs to select the equipment that fits your specific needs and budget—not our bottom line.
-                        </p>
-
-                        <div className="grid gap-6">
-                            <div className="bg-white/5 p-6 rounded-xl border border-white/10">
-                                <div className="flex items-center gap-4 mb-3">
-                                    <Handshake className="w-8 h-8 text-[#63c1b3]" />
-                                    <h3 className="text-xl font-bold text-white">Vendor-Agnostic</h3>
-                                </div>
-                                <p className="text-gray-400">Unbiased recommendations tailored to your goals.</p>
-                            </div>
-                        </div>
-                    </motion.div>
-
-                    <motion.div
-                        initial={{ opacity: 0, x: 30 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        viewport={{ once: true }}
-                        className="bg-white/5 rounded-2xl p-8 border border-white/10"
-                    >
-                        <div className="flex items-center gap-4 mb-6">
-                            <Users className="w-8 h-8 text-[#63c1b3]" />
-                            <h3 className="text-2xl font-bold text-[#63c1b3]">The Team</h3>
-                        </div>
-                        <p className="text-gray-400 mb-6 leading-relaxed">
-                            Our leadership comprises veterans who have executed pan-regional rollouts for the largest media houses in Asia. With a combined experience of over 50 years in RF, IP, and Satellite engineering, your vision is in safe hands.
-                        </p>
-                        <div className="flex flex-wrap gap-4">
-                            <div className="px-4 py-2 bg-primary/20 rounded-lg text-primary font-bold">50+ Years Experience</div>
-                            <div className="px-4 py-2 bg-primary/20 rounded-lg text-primary font-bold">Pan-Regional Rollouts</div>
-                        </div>
-                    </motion.div>
-                </div>
-
-                {/* CTA */}
-                <motion.div
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    className="bg-gradient-to-r from-primary/20 to-blue-600/20 rounded-3xl p-12 text-center border border-primary/20 mb-24"
-                >
-                    <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-6">
-                        <Zap className="w-12 h-12 text-[#63c1b3]" />
-                        <h2 className="text-3xl md:text-5xl font-bold text-white">
-                            Ready to Begin Your <span className="text-[#63c1b3]">Digital Transformation?</span>
                         </h2>
                     </div>
-                    <p className="text-gray-300 text-xl max-w-2xl mx-auto mb-8">
-                        Reach out to our engineering team today for a comprehensive infrastructure audit or a new project consultation.
-                    </p>
-                    <Button size="lg" className="bg-primary hover:bg-primary/90 text-white px-8 py-6 text-lg rounded-full">
-                        Start Your Project <ArrowRight className="ml-2 w-5 h-5" />
-                    </Button>
-                </motion.div>
 
-                {/* Contact Details */}
-                <motion.div
-                    className="grid md:grid-cols-3 gap-8"
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true }}
-                    variants={{
-                        hidden: { opacity: 0 },
-                        visible: {
-                            opacity: 1,
-                            transition: {
-                                staggerChildren: 0.2
-                            }
-                        }
-                    }}
-                >
+                    <div className="grid lg:grid-cols-2 gap-8">
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            className="group bg-gray-50 rounded-2xl p-8 border border-gray-100 hover:border-[#63c1b3]/50 transition-all duration-300 hover:bg-gray-100/50 cursor-pointer"
+                        >
+                            <h3 className="text-2xl font-bold text-gray-900 mb-6 flex items-center gap-3">
+                                <div className="bg-[#63c1b3]/15 p-4 rounded-xl group-hover:scale-110 transition-transform duration-300 shadow-sm group-hover:shadow-teal-500/20">
+                                    <Zap className="w-8 h-8 text-[#63c1b3]" />
+                                </div>
+                                The Broadcast Digitally Difference
+                            </h3>
+                            <p className="text-gray-600 text-lg leading-relaxed font-light">
+                                What sets us apart from the traditional market is our Vendor-Agnostic Approach. We work with the world's leading OEMs to select the equipment that fits your specific needs and budget, not our bottom line.
+                            </p>
+                        </motion.div>
+
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            whileInView={{ opacity: 1, y: 0 }}
+                            viewport={{ once: true }}
+                            className="bg-gray-100/50 rounded-2xl p-8 border border-[#63c1b3]/50"
+                        >
+                            <div className="flex items-center gap-4 mb-6">
+                                <div className="bg-[#63c1b3]/10 p-2 rounded-lg scale-110">
+                                    <Users className="w-8 h-8 text-[#63c1b3]" />
+                                </div>
+                                <h3 className="text-2xl font-bold text-gray-900 font-sans">The Team</h3>
+                            </div>
+                            <p className="text-gray-600 mb-8 leading-relaxed text-lg font-light">
+                                Our leadership comprises veterans who have executed pan-regional rollouts for the largest media houses in Asia. With a combined experience of over 50 years in RF, IP, and Satellite engineering, your vision is in safe hands.
+                            </p>
+                            <div className="flex flex-wrap gap-4">
+                                <div className="px-5 py-2.5 bg-white rounded-lg text-[#63c1b3] font-bold border border-[#63c1b3]/50">50+ Years Experience</div>
+                                <div className="px-5 py-2.5 bg-white rounded-lg text-[#63c1b3] font-bold border border-[#63c1b3]/50">Pan-Regional Rollouts</div>
+                            </div>
+                        </motion.div>
+                    </div>
+                </div>
+            </div>
+
+            {/* CTA Section - White Background */}
+            <div className="bg-white pt-4 pb-24">
+                <div className="container mx-auto px-4 relative z-10">
                     <motion.div
-                        variants={{
-                            hidden: { opacity: 0, y: 20 },
-                            visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
-                        }}
-                        whileHover={{ y: -5 }}
-                        className="bg-white/5 p-6 rounded-xl border border-white/10 hover:border-primary/50 transition-colors cursor-pointer"
+                        initial={{ opacity: 0, y: 30 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="group bg-gray-50 rounded-3xl py-12 px-6 text-center border border-gray-100 max-w-5xl mx-auto hover:border-[#63c1b3]/30 transition-all duration-300 hover:bg-gray-100/50 cursor-pointer"
                     >
-                        <div className="flex items-center gap-3 mb-3">
-                            <MapPin className="w-8 h-8 text-[#63c1b3]" />
-                            <h3 className="text-lg font-bold text-[#63c1b3]">Office Address</h3>
+                        <div className="flex flex-col md:flex-row items-center justify-center gap-4 mb-6">
+                            <Zap className="w-10 h-10 md:w-12 md:h-12 text-[#63c1b3] group-hover:scale-110 transition-transform duration-300" />
+                            <h2 className="text-2xl md:text-4xl font-bold text-gray-900 max-w-4xl leading-tight text-center md:text-left">
+                                Ready to Begin Your <span className="text-[#63c1b3]">Digital Transformation?</span>
+                            </h2>
                         </div>
-                        <p className="text-gray-400">123 Media Tech Park,<br />Innovation District, NY 10001</p>
+                        <p className="text-gray-600 text-sm md:text-base max-w-2xl mx-auto mb-8 leading-relaxed font-light font-sans">
+                            Reach out to our engineering team today for a comprehensive infrastructure audit or a new project consultation.
+                        </p>
+                        <button
+                            className="text-gray-900 hover:text-[#63c1b3] transition-all flex items-center gap-3 mx-auto font-medium text-lg group"
+                            onClick={() => window.location.href = 'mailto:contact@broadcastdigitally.com'}
+                        >
+                            Start Your Project
+                            <ArrowRight className="w-5 h-5 transition-transform group-hover:translate-x-1" />
+                        </button>
                     </motion.div>
-
-                    <motion.div
-                        variants={{
-                            hidden: { opacity: 0, y: 20 },
-                            visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
-                        }}
-                        whileHover={{ y: -5 }}
-                        className="bg-white/5 p-6 rounded-xl border border-white/10 hover:border-primary/50 transition-colors cursor-pointer"
-                    >
-                        <div className="flex items-center gap-3 mb-3">
-                            <Phone className="w-8 h-8 text-[#63c1b3]" />
-                            <h3 className="text-lg font-bold text-[#63c1b3]">Direct Line</h3>
-                        </div>
-                        <p className="text-gray-400">+1 (555) 123-4567<br />Mon-Fri, 9am - 6pm EST</p>
-                    </motion.div>
-
-                    <motion.div
-                        variants={{
-                            hidden: { opacity: 0, y: 20 },
-                            visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
-                        }}
-                        whileHover={{ y: -5 }}
-                        className="bg-white/5 p-6 rounded-xl border border-white/10 hover:border-primary/50 transition-colors cursor-pointer"
-                    >
-                        <div className="flex items-center gap-3 mb-3">
-                            <Mail className="w-8 h-8 text-[#63c1b3]" />
-                            <h3 className="text-lg font-bold text-[#63c1b3]">Email</h3>
-                        </div>
-                        <p className="text-gray-400">contact@broadcastdigitally.com<br />support@broadcastdigitally.com</p>
-                    </motion.div>
-                </motion.div>
-
+                </div>
             </div>
         </section>
     );

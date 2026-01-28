@@ -75,10 +75,10 @@ const AboutSection = () => {
                 visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
               }}
             >
-              <h3 className="text-xl font-bold text-[#63c1b3] mb-4 border-l-4 border-[#63c1b3] pl-4">
+              <h3 className="text-2xl md:text-3xl font-bold text-[#63c1b3] mb-6 border-l-4 border-[#63c1b3] pl-4 uppercase tracking-tight">
                 Our Core Values
               </h3>
-              <div className="grid gap-4">
+              <div className="grid gap-6">
                 {[
                   {
                     title: "Precision",
@@ -93,48 +93,53 @@ const AboutSection = () => {
                     desc: "We are a lifecycle partner. From the first frequency study to the 1,000th hour of broadcast, we are with you.",
                   },
                 ].map((value, idx) => (
-                  <div key={idx} className="flex gap-4">
-                    <div className="mt-1 bg-primary/20 p-2 rounded-lg h-fit">
-                      <Check className="w-4 h-4 text-primary" />
+                  <div key={idx} className="flex gap-5">
+                    <div className="mt-1 bg-primary/20 p-2.5 rounded-lg h-fit">
+                      <Check className="w-5 h-5 text-primary" />
                     </div>
                     <div>
-                      <h4 className="text-white font-semibold">{value.title}</h4>
-                      <p className="text-gray-400 text-sm">{value.desc}</p>
+                      <h4 className="text-white text-xl font-bold mb-1">{value.title}</h4>
+                      <p className="text-gray-400 text-sm md:text-base leading-relaxed">{value.desc}</p>
                     </div>
                   </div>
                 ))}
               </div>
             </motion.div>
-
-            {/* Mission & Vision */}
-            <motion.div
-              className="grid md:grid-cols-2 gap-6"
-              variants={{
-                hidden: { opacity: 0, y: 20 },
-                visible: { opacity: 1, y: 0, transition: { duration: 0.5 } }
-              }}
-            >
-              <div className="bg-white/5 p-6 rounded-xl border border-white/5 backdrop-blur-sm">
-                <div className="flex items-center gap-3 mb-3">
-                  <Target className="w-8 h-8 text-[#63c1b3]" />
-                  <h4 className="text-[#63c1b3] font-bold">Our Mission</h4>
-                </div>
-                <p className="text-gray-400 text-sm">
-                  To empower creators and broadcasters by removing technical complexity through world-class systems integration.
-                </p>
-              </div>
-              <div className="bg-white/5 p-6 rounded-xl border border-white/5 backdrop-blur-sm">
-                <div className="flex items-center gap-3 mb-3">
-                  <Lightbulb className="w-8 h-8 text-[#63c1b3]" />
-                  <h4 className="text-[#63c1b3] font-bold">Our Vision</h4>
-                </div>
-                <p className="text-gray-400 text-sm">
-                  To be the global leader in transitioning the broadcast industry into a fully digital, automated, and cloud-capable era.
-                </p>
-              </div>
-            </motion.div>
           </motion.div>
         </div>
+
+        {/* Mission & Vision - Moved to bottom */}
+        <motion.div
+          className="grid md:grid-cols-2 gap-8 mt-20 max-w-5xl mx-auto"
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          <div className="bg-[#111111] p-10 rounded-3xl border border-white/5 shadow-2xl hover:border-[#63c1b3]/30 transition-all duration-500 group">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="bg-[#63c1b3]/10 p-3 rounded-2xl group-hover:scale-110 transition-transform">
+                <Target className="w-10 h-10 text-[#63c1b3]" />
+              </div>
+              <h4 className="text-[#63c1b3] text-2xl font-bold tracking-tight">Our Mission</h4>
+            </div>
+            <p className="text-gray-400 text-lg leading-relaxed font-light">
+              To empower creators and broadcasters by removing technical complexity through world-class systems integration.
+            </p>
+          </div>
+
+          <div className="bg-[#111111] p-10 rounded-3xl border border-white/5 shadow-2xl hover:border-[#63c1b3]/30 transition-all duration-500 group">
+            <div className="flex items-center gap-4 mb-6">
+              <div className="bg-[#63c1b3]/10 p-3 rounded-2xl group-hover:scale-110 transition-transform">
+                <Lightbulb className="w-10 h-10 text-[#63c1b3]" />
+              </div>
+              <h4 className="text-[#63c1b3] text-2xl font-bold tracking-tight">Our Vision</h4>
+            </div>
+            <p className="text-gray-400 text-lg leading-relaxed font-light">
+              To be the global leader in transitioning the broadcast industry into a fully digital, automated, and cloud-capable era.
+            </p>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

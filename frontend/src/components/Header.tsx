@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Activity, Menu, X, Home, Users, Zap, Mail, Phone } from "lucide-react";
+import { Activity, Menu, X } from "lucide-react";
 import { Button } from "../components/ui/button";
 
 const Header = () => {
@@ -16,10 +16,10 @@ const Header = () => {
   }, []);
 
   const navLinks = [
-    { name: "Home", href: "#hero", icon: Home },
-    { name: "Who We Are", href: "#about", icon: Users },
-    { name: "Solutions", href: "#solutions", icon: Zap },
-    { name: "Contact", href: "#contact", icon: Mail },
+    { name: "Home", href: "#hero" },
+    { name: "Who We Are", href: "#about" },
+    { name: "Solutions", href: "#solutions" },
+    { name: "Contact", href: "#contact" },
   ];
 
   return (
@@ -49,7 +49,7 @@ const Header = () => {
           </motion.a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-8">
+          <nav className="hidden md:flex items-center gap-8 ml-auto mr-8">
             {navLinks.map((link) => (
               <motion.a
                 key={link.name}
@@ -57,11 +57,7 @@ const Header = () => {
                 className="text-gray-300 hover:text-primary font-medium transition-colors relative group text-sm uppercase tracking-wide"
                 whileHover={{ y: -2 }}
               >
-
-                <div className="flex items-center gap-2">
-                  <link.icon className="w-4 h-4" />
-                  {link.name}
-                </div>
+                {link.name}
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full" />
               </motion.a>
             ))}
@@ -69,11 +65,6 @@ const Header = () => {
 
           {/* Right Side */}
           <div className="flex items-center gap-4">
-            <Button className="hidden md:flex items-center gap-2 bg-[#63c1b3] hover:bg-[#52a699] text-white rounded-full px-6 shadow-md hover:shadow-lg transition-all">
-              <Phone className="w-4 h-4" />
-              Get Consultation
-            </Button>
-
             {/* Mobile Menu Button */}
             <Button
               variant="ghost"
@@ -107,16 +98,9 @@ const Header = () => {
                     className="flex items-center gap-3 px-4 py-2 text-gray-300 hover:text-white hover:bg-white/5 transition-colors uppercase tracking-wide text-sm"
                     onClick={() => setIsMenuOpen(false)}
                   >
-                    <link.icon className="w-5 h-5 text-primary" />
                     {link.name}
                   </a>
                 ))}
-                <div className="px-4">
-                  <Button className="w-full flex items-center justify-center gap-2 bg-[#63c1b3] hover:bg-[#52a699] text-white">
-                    <Phone className="w-4 h-4" />
-                    Get Consultation
-                  </Button>
-                </div>
               </div>
             </motion.div>
           )}

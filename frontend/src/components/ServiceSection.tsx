@@ -10,8 +10,7 @@ const services = [
       "SITC of High-Power Transmitters",
       "Visual Radio & Podcast Studio integration",
       "Automated Traffic & Billing software deployment"
-    ],
-    className: "md:col-span-2"
+    ]
   },
   {
     icon: Tv,
@@ -21,8 +20,7 @@ const services = [
       "4K/UHD/HDR Workflow Design",
       "Virtual Studios and Augmented Reality (AR) Graphics",
       "Master Control Room (MCR) & Playout Automation"
-    ],
-    className: "md:col-span-1"
+    ]
   },
   {
     icon: Settings,
@@ -32,8 +30,7 @@ const services = [
       "24/7 On-site Technical Support",
       "Annual Maintenance Contracts (AMC)",
       "Frequency Coordination & Regulatory Consultancy"
-    ],
-    className: "md:col-span-1"
+    ]
   },
   {
     icon: Cable,
@@ -43,8 +40,7 @@ const services = [
       "Cabling: Authorized integration of Belden, Neutrik, and SMPTE Fiber",
       "T&M: Comprehensive Test & Measurement services for RF and AV quality",
       "Remote Production: Low-latency IP links for live event coverage"
-    ],
-    className: "md:col-span-2"
+    ]
   },
 ];
 
@@ -72,7 +68,7 @@ const ServicesSection = () => {
           </p>
         </motion.div>
 
-        {/* Services Bento Grid */}
+        {/* Services Grid */}
         <motion.div
           className="grid grid-cols-1 md:grid-cols-3 gap-6"
           initial="hidden"
@@ -88,10 +84,11 @@ const ServicesSection = () => {
             }
           }}
         >
-          {services.map((service) => (
+          {services.map((service, index) => (
             <motion.div
               key={service.title}
-              className={`group bg-white/5 p-8 rounded-2xl border border-white/10 hover:border-primary/50 transition-all duration-300 hover:bg-white/[0.07] ${service.className}`}
+              className={`group bg-white/5 p-8 rounded-2xl border border-white/10 hover:border-primary/50 transition-all duration-300 hover:bg-white/[0.07] ${index === 3 ? "md:col-start-2" : ""
+                }`}
               variants={{
                 hidden: { opacity: 0, y: 30 },
                 visible: {
