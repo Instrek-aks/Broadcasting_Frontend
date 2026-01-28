@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowRight, Handshake, Users, Zap } from "lucide-react";
+import { ArrowRight, Users, Zap } from "lucide-react";
 
 const ContactSection = () => {
     return (
