@@ -37,7 +37,7 @@ const ContactSection = () => {
                                     The Broadcast Digitally Difference
                                 </h3>
                             </div>
-                            <p className="text-gray-500 text-base leading-relaxed font-light">
+                            <p className="text-gray-900 text-base leading-relaxed font-light">
                                 What sets us apart from the traditional market is our Vendor-Agnostic Approach. We work with the world's leading OEMs to select the equipment that fits your specific needs and budget, not our bottom line.
                             </p>
                         </div>
@@ -58,7 +58,7 @@ const ContactSection = () => {
                                     The Team
                                 </h3>
                             </div>
-                            <p className="text-gray-500 text-base leading-relaxed font-light">
+                            <p className="text-gray-900 text-base leading-relaxed font-light">
                                 Our leadership comprises veterans who have executed pan-regional rollouts for the largest media houses in Asia. With a combined experience of over 50 years in RF, IP, and Satellite engineering, your vision is in safe hands.
                             </p>
                         </div>
@@ -79,7 +79,7 @@ const ContactSection = () => {
                                 Ready to Begin Your <span className="text-[#63c1b3]">Digital Transformation?</span>
                             </h2>
                         </div>
-                        <p className="text-gray-500 text-base max-w-2xl mx-auto leading-relaxed font-light">
+                        <p className="text-gray-900 text-base max-w-2xl mx-auto leading-relaxed font-light">
                             Reach out to our engineering team today for a comprehensive infrastructure audit or a new project consultation.
                         </p>
                     </div>
