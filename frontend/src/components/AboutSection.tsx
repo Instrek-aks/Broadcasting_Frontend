@@ -95,12 +95,12 @@ const AboutSection = () => {
                 desc: "We are a lifecycle partner. From the first frequency study to the 1,000th hour of broadcast, we are with you.",
               },
             ].map((value, idx) => (
-              <div key={idx} className="flex gap-5 items-center">
-                <div className="bg-primary/20 p-2 rounded-lg h-fit flex-shrink-0">
+              <div key={idx} className="flex gap-4 md:gap-5 items-start">
+                <div className="bg-primary/20 p-2 rounded-lg h-fit flex-shrink-0 mt-1">
                   <Check className="w-5 h-5 text-primary" />
                 </div>
                 <div className="min-w-0">
-                  <p className="text-gray-400 text-sm md:text-base whitespace-nowrap overflow-x-auto no-scrollbar">
+                  <p className="text-gray-400 text-sm md:text-base whitespace-normal">
                     <span className="text-white text-lg md:text-xl font-bold mr-3">{value.title}</span>
                     {value.desc}
                   </p>
@@ -118,10 +118,10 @@ const AboutSection = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          <div className="bg-[#111111] p-10 rounded-3xl border border-white/5 shadow-2xl hover:border-[#63c1b3]/30 transition-all duration-500 group">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="bg-[#63c1b3]/10 p-3 rounded-2xl group-hover:scale-110 transition-transform">
-                <Target className="w-10 h-10 text-[#63c1b3]" />
+          <div className="bg-[#111111] p-10 rounded-3xl border border-white/5 shadow-2xl hover:border-[#63c1b3]/30 transition-all duration-500 group text-center">
+            <div className="flex items-center justify-center gap-4 mb-6">
+              <div className="bg-[#63c1b3]/10 p-2.5 rounded-xl group-hover:scale-110 transition-transform">
+                <Target className="w-7 h-7 text-[#63c1b3]" />
               </div>
               <h4 className="text-[#63c1b3] text-2xl font-bold tracking-tight">Our Mission</h4>
             </div>
@@ -130,10 +130,10 @@ const AboutSection = () => {
             </p>
           </div>
 
-          <div className="bg-[#111111] p-10 rounded-3xl border border-white/5 shadow-2xl hover:border-[#63c1b3]/30 transition-all duration-500 group">
-            <div className="flex items-center gap-4 mb-6">
-              <div className="bg-[#63c1b3]/10 p-3 rounded-2xl group-hover:scale-110 transition-transform">
-                <Lightbulb className="w-10 h-10 text-[#63c1b3]" />
+          <div className="bg-[#111111] p-10 rounded-3xl border border-white/5 shadow-2xl hover:border-[#63c1b3]/30 transition-all duration-500 group text-center">
+            <div className="flex items-center justify-center gap-4 mb-6">
+              <div className="bg-[#63c1b3]/10 p-2.5 rounded-xl group-hover:scale-110 transition-transform">
+                <Lightbulb className="w-7 h-7 text-[#63c1b3]" />
               </div>
               <h4 className="text-[#63c1b3] text-2xl font-bold tracking-tight">Our Vision</h4>
             </div>

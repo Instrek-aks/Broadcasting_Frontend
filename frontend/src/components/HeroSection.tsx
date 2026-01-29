@@ -13,7 +13,7 @@ const HeroSection = () => {
         <img
           src="/hero-bg-tower-right-full.png"
           alt="Broadcast Digitally High Tech Background"
-          className="w-full h-full object-cover object-top opacity-100"
+          className="w-full h-full object-cover object-right md:object-top opacity-100"
         />
       </div>
 
